@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Details - AZoom Car Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="Images/AZLogo.png" aria-label="AZoom Rental home">
+                <img src="Images/AZLogo.png" 
+                    alt="AZoom Rental Logo">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <a href="index.html#features-section">About Us</a> |
+                <a href="rent.html">Rent</a> |
+                <a href="reservations.html">Reservations</a> | 
+                <a href="return.html">Return</a> | 
+                <a href="login.html">Login/Signup</a> |
+                <a href="logout.html">Logout</a>
+            </ul>
+        </nav>
+    </header>
+
+    <body class="booking-details-page">
+        <div class="booking-details-container">
+
+            <h1>Booking Confirmation</h1>
+            <p>Your reservation details are shown below.</p>
+
+            <div id="booking-details">
+                Loading booking details...
+            </div>
+
+            <a href="rent.html" class="btn">Browse More Cars</a>
+        </div>
+    </body>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>AZoom Rental</h3>
+                <p> Your trusted partner for convenient, affordable and reliable car rental.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Our Socials</h3>
+
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>
+                &copy; 2026 DriveEasy Car Rental.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Get the saved booking
+    const savedBooking = localStorage.getItem("reservation");
+
+    const detailsContainer =
+        document.getElementById("booking-details");
+
+    // Check whether a booking exists
+    if (!savedBooking) {
+        detailsContainer.textContent =
+            "No booking details found. Please make a reservation first.";
+        return;
+    }
+
+    // Convert the saved text back into a JavaScript object
+    const booking = JSON.parse(savedBooking);
+
+    // Display the booking details
+    detailsContainer.innerHTML = `
+        <p><strong>Booking Number:</strong> ${booking.bookingNumber}</p>
+        <h2>Customer Information</h2>
+        <p><strong>Name:</strong> ${booking.firstName} ${booking.lastName}</p>
+        <p><strong>Email:</strong> ${booking.email}</p>
+        <p><strong>Phone:</strong> ${booking.phoneNum}</p>
+
+        <h2>Rental Information</h2>
+        <p><strong>Car:</strong> ${booking.car}</p>
+        <p><strong>Collection Branch:</strong> ${booking.branch}</p>
+        <p><strong>Pickup Date:</strong> ${booking.pickupDate}</p>
+        <p><strong>Return Date:</strong> ${booking.returnDate}</p>
+        <p><strong>Rental Duration:</strong> ${booking.rentalDays} days</p>
+
+        <h2>Payment Summary</h2>
+        <p><strong>Estimated Total:</strong> $${booking.totalCost}</p>
+        <p>Payment has not been processed.</p>
+    `;
+});
+</script>
+</html>

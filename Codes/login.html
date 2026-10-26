@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    </head>
+
+
+    <body>
+        <header class="site-header">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html" aria-label="AZoom Rental home">
+                <img src="Images/AZLogo.png" 
+                    alt="AZoom Rental Logo">
+            </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="navbar" aria-label="Main navigation">
+            <ul>
+                <a href="index.html#features-section">About Us</a> |
+                <a href="rent.html">Rent</a> |
+                <a href="reservations.html">Reservations</a> | 
+                <a href="return.html">Return</a> | 
+                <a href="login.html">Login/Signup</a> |
+                <a href="logout.html">Logout</a>
+            </ul>
+        </nav>
+        </header>
+        
+        <section class="login-section">
+        <div class="login-container">
+            <h1>Login/Register Page</h1>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form">
+                <h2>Login</h2>
+                    <input type="email" id="loginEmail" placeholder="Email" required />
+                    <input type="password" id="loginPassword" placeholder="Password" required />
+                    <button type="submit">Login</button>
+                    <p>
+                        No account? 
+                        <a href="#registerForm" onclick="toggleView('registerForm')" style="color: black;">Register</a> |
+                        <a href="#resetForm" onclick="toggleView('resetForm')" style="color: black;">Forgot Password?</a>
+                    </p>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="form hidden">
+                <h2>Register</h2>
+                    <input type="text" id="registerFirstName" placeholder="First Name" required/>
+                    <input type="text" id="registerLastName" placeholder="Last Name" required/>
+                    <input type="text" id="registerPhoneNum" placeholder="Phone Number" required/>
+                    <input type="email" id="registerEmail" placeholder="Email" required/>
+                    <input type="password" id="registerPassword" placeholder="Password" required/>
+                    <button type="submit">Register</button>
+                    <p>
+                        Already have an account? <a href="#loginForm" onclick="toggleView('loginForm')">Login</a>
+                    </p>
+            </form>
+
+            <!-- Reset Password Form -->
+            <form id="resetForm" class="form hidden">
+                <h2>Reset Password</h2>
+                    <input type="email" id="resetEmail" placeholder="Enter your registered email" required />
+                    <button type="submit">Reset Password</button>
+                    <p>
+                        <a href="#" onclick="toggleView('loginForm')">Back to Login</a>
+                    </p>
+            </form>
+
+            <!-- Welcome Message -->
+            <div id="welcome" class="hidden">
+                <h2>Welcome, <span id="userEmail"></span></h2>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        </section>
+    
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>AZoom Rental</h3>
+                    <p> Your trusted partner for convenient, affordable and reliable car rental.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-column">
+                    <h3>Our Socials</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>
+                    &copy; 2026 DriveEasy Car Rental.
+                    All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

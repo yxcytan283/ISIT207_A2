@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Reservations</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+
+
+    <body>
+    <header class="site-header">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html" aria-label="AZoom Rental home">
+                <img src="Images\AZLogo.png" 
+                    alt="AZoom Rental Logo">
+            </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="navbar" aria-label="Main navigation">
+            <ul>
+                <a href="index.html#features-section">About Us</a> |
+                <a href="rent.html">Rent</a> |
+                <a href="reservations.html">Reservations</a> | 
+                <a href="return.html">Return</a> | 
+                <a href="login.html">Login/Signup</a> |
+                <a href="logout.html">Logout</a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="reservations-section">
+        <div class="reservations-container">
+            <p>Selected Car: <span id="selected-car"></span></p>
+            <p>Daily Price: $<span id="daily-price"></span></p>
+            <p>Weekly Price: $<span id="weekly-price"></span></p>
+            <p>Monthly Price: $<span id="monthly-price"></span></p>
+        </div>
+
+        <form id="reservationsForm">
+        <div class="reservations-container">
+            
+            <h2>Customer Information</h2>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br><br>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required><br><br>
+
+                <label for="phoneNum">Phone Number:</label>
+                <input type="text" id="phoneNum" name="phoneNum" required><br><br>
+            
+        </div>    
+    
+        <div class="reservations-container">
+            <h2>Rental Information</h2>
+                    <label for="car">Car:</label>
+                    <select id="car" name="carName" required>
+                        <option value="">-- Select a car -- </option>
+                        <option value="Tesla Model 3"> Tesla Model 3 - $70/day</option>
+                        <option value="BYD Seal">  BYD Seal - $65/day</option>
+                        <option value="Hyundai Ioniq 5">Hyundai Ioniq 5 - $75/day</option>
+                        <option value="Mercedes">Mercedes - $60/day</option>
+                    </select><br><br>
+
+                    <label for="branch">Collect At:</label>
+                    <select id="branch" name="branch" required>
+                        <option value="">-- Select a branch -- </option>
+                        <option value="West">West Branch</option>
+                        <option value="East">East Branch</option>
+                        <option value="Central">Central Branch</option>
+                        <option value="North">North Branch</option>
+                    </select><br><br>
+
+                    <label for="pickUp">Pick Up Date:</label>
+                    <input type="date" id="pickUp" name="pickUpDate" required><br><br>
+
+                    <label for="return">Return Date:</label>
+                    <input type="date" id="return" name="returnDate" required><br><br>
+        </div>
+            
+        <div class="reservations-container">
+            <h2>Payment Information</h2> 
+                <p style="font-size: 14px;">Payment to be made only with credit card</p>
+
+                <div class="payment-container">
+                    <label for="cardName">Name on Card: </label>
+                        <input type="text" id="cardName"required><br><br>
+                    <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" maxlength="16" placeholder="1234567812345678" required><br><br>
+
+                    <label for="expiry"> Expiry Date </label>
+                        <input type="month" id="expiry" required><br><br>
+                        
+                    <label for="cvv"> CVV </label>
+                        <input type="password" id="cvv" maxlength="3" required><br><br>    
+                </div>  
+        <button class="btn" type="submit">Confirm Reservation</button>           
+        </div>
+        </form>
+    </div>
+    
+    
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>AZoom Rental</h3>
+                <p> Your trusted partner for convenient, affordable and reliable car rental.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Our Socials</h3>
+
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>
+                &copy; 2026 DriveEasy Car Rental.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+    </body>        
